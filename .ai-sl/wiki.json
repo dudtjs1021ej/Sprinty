@@ -1,0 +1,38 @@
+[
+  {
+    "id": "SPEC-AUTH-LOGIN",
+    "title": "로그인 인증 및 세션 관리",
+    "owner": "minsu",
+    "priority": "high",
+    "keywords": [
+      "auth",
+      "login",
+      "jwt",
+      "refresh token",
+      "session",
+      "GH"
+    ],
+    "acceptanceCriteria": [
+      {
+        "id": "AUTH-AC-1",
+        "text": "로그인 실패 시 표준 에러 응답을 반환한다.",
+        "keywords": [
+          "error",
+          "failure",
+          "401",
+          "test"
+        ]
+      },
+      {
+        "id": "AUTH-AC-2",
+        "text": "refresh token 만료 시간을 검증한다.",
+        "keywords": [
+          "refresh token",
+          "expiry",
+          "expiration",
+          "test"
+        ]
+      }
+    ]
+  }
+]
