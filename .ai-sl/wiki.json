@@ -1,36 +1,102 @@
 [
   {
-    "id": "SPEC-AUTH-LOGIN",
-    "title": "로그인 인증 및 세션 관리",
+    "id": "SPEC-DEMO-AUTH-LOGIN",
+    "title": "Login Authentication Plan / 로그인 인증 기획",
     "owner": "minsu",
     "priority": "high",
     "keywords": [
-      "auth",
-      "login",
-      "jwt",
-      "refresh token",
-      "session",
-      "GH"
+      "auth-login",
+      "sprinty/demo-auth-login",
+      "[Sprinty Demo] Implement Login Flow / 로그인 플로우 구현",
+      "SPEC-DEMO-AUTH-LOGIN"
     ],
     "acceptanceCriteria": [
       {
         "id": "AUTH-AC-1",
-        "text": "로그인 실패 시 표준 에러 응답을 반환한다.",
+        "text": "Return HTTP 401 and a standard error code on login failure. / 로그인 실패 시 401 에러와 표준 에러 코드를 반환한다.",
         "keywords": [
-          "error",
-          "failure",
+          "login failure",
           "401",
-          "test"
+          "INVALID_CREDENTIALS",
+          "error"
         ]
       },
       {
         "id": "AUTH-AC-2",
-        "text": "refresh token 만료 시간을 검증한다.",
+        "text": "Validate refresh token expiration time. / refresh token 만료 시간을 검증한다.",
         "keywords": [
           "refresh token",
-          "expiry",
-          "expiration",
-          "test"
+          "expiresAt",
+          "expired",
+          "isRefreshTokenExpired"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SPEC-DEMO-PAYMENT-CHECKOUT",
+    "title": "Payment Checkout Plan / 결제 승인 기획",
+    "owner": "doyun",
+    "priority": "high",
+    "keywords": [
+      "payment-checkout",
+      "sprinty/demo-payment-checkout",
+      "[Sprinty Demo] Implement Payment Checkout / 결제 승인 플로우 구현",
+      "SPEC-DEMO-PAYMENT-CHECKOUT"
+    ],
+    "acceptanceCriteria": [
+      {
+        "id": "PAY-AC-1",
+        "text": "Create a checkout approval request model. / 결제 승인 요청 모델을 생성한다.",
+        "keywords": [
+          "checkout",
+          "approval",
+          "request",
+          "model"
+        ]
+      },
+      {
+        "id": "PAY-AC-2",
+        "text": "Show the failure reason to the user when payment is declined. / 결제 실패 시 실패 사유를 사용자에게 전달한다.",
+        "keywords": [
+          "failure",
+          "reason",
+          "declined",
+          "message"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SPEC-DEMO-SLACK-NOTIFY",
+    "title": "Slack Deployment Alert Plan / 배포 실패 Slack 알림 기획",
+    "owner": "ara",
+    "priority": "high",
+    "keywords": [
+      "slack-notify",
+      "sprinty/demo-slack-notify",
+      "[Sprinty Demo] Implement Slack Deployment Alert / 배포 실패 Slack 알림 구현",
+      "SPEC-DEMO-SLACK-NOTIFY"
+    ],
+    "acceptanceCriteria": [
+      {
+        "id": "SLACK-AC-1",
+        "text": "Send deployment failure events to a Slack webhook. / 배포 실패 이벤트를 Slack webhook으로 전송한다.",
+        "keywords": [
+          "deploy",
+          "failure",
+          "slack",
+          "webhook"
+        ]
+      },
+      {
+        "id": "SLACK-AC-2",
+        "text": "Retry when Slack delivery fails. / Slack 전송 실패 시 재시도한다.",
+        "keywords": [
+          "retry",
+          "attempt",
+          "slack",
+          "failure"
         ]
       }
     ]
